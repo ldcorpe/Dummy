@@ -24,7 +24,7 @@ puppiForward = cms.VPSet(
                  )
                 )
 
-puppi =  puppi = cms.EDProducer("PuppiProducer",#cms.PSet(#"PuppiProducer",
+puppi = cms.EDProducer("PuppiProducer",#cms.PSet(#"PuppiProducer",
                        PuppiName      = cms.untracked.string("Puppi"),
                        UseDeltaZCut   = cms.untracked.bool  (True),
                        DeltaZCut      = cms.untracked.double(0.2),

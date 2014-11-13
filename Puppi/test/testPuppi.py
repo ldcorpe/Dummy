@@ -27,7 +27,8 @@ process.options = cms.untracked.PSet(
 process.puppiSequence = cms.Sequence(process.puppi)
 process.p = cms.Path(process.puppiSequence)
 process.output = cms.OutputModule("PoolOutputModule",                                                                                                                                                     
-                                  outputCommands = cms.untracked.vstring('drop *','keep *_*_*_RECO','drop *_*_Cleaned_*','keep *_puppi_*_*'),
+                                  outputCommands = cms.untracked.vstring('keep *'),
+                                  #outputCommands = cms.untracked.vstring('drop *','keep *_*_*_RECO','drop *_*_Cleaned_*','keep *_puppi_*_*'),
                                   fileName       = cms.untracked.string ("Output.root")                                                                                                                   
 )
 # schedule definition                                                                                                       
