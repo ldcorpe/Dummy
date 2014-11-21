@@ -55,6 +55,7 @@ class PuppiProducer : public edm::EDProducer {
 		edm::EDGetTokenT<View<pat::PackedCandidate> > pfcandidateToken_;
 		bool            fUseDZ;
 		float           fDZCut;
+		bool 						useFlashggVertex;
 		PuppiContainer *fPuppiContainer;
 		std::vector<RecoObj> fRecoObjCollection;
 		//std::auto_ptr <vector<edm::FwdPtr< reco::PFCandidate > > >    fPuppiCandidates;

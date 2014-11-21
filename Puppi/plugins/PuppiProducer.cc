@@ -34,7 +34,8 @@ PuppiProducer::PuppiProducer(const edm::ParameterSet& iConfig) :
 	vertexCandidateMapToken_(consumes<flashgg::VertexCandidateMap>(iConfig.getParameter<edm::InputTag> ("VertexCandidateMapTag"))),
 	diPhotonToken_(consumes<View<flashgg::DiPhotonCandidate> >(iConfig.getUntrackedParameter<edm::InputTag> ("DiPhotonTag", InputTag("flashggDiPhotons")))),
 	vertexToken_(consumes<View<reco::Vertex> >(iConfig.getUntrackedParameter<InputTag> ("VertexTag", InputTag("offlineSlimmedPrimaryVertices")))),
-	pfcandidateToken_(consumes<View<pat::PackedCandidate> >(iConfig.getUntrackedParameter<InputTag> ("PFCandidatesTag", InputTag("packedPFCandidates"))))
+	pfcandidateToken_(consumes<View<pat::PackedCandidate> >(iConfig.getUntrackedParameter<InputTag> ("PFCandidatesTag", InputTag("packedPFCandidates")))),
+	useFlashggVertex(iConfig.getUntrackedParameter<bool>("UseFlashggVertex",false))
 {
 	fPuppiName = iConfig.getUntrackedParameter<std::string>("PuppiName");
 	fUseDZ     = iConfig.getUntrackedParameter<bool>("UseDeltaZCut");
@@ -145,13 +146,18 @@ const PtrVector<pat::PackedCandidate>& PFCol = pfCandidates->ptrVector();
 		
      edm::Ptr<reco::Vertex> lpv;
 
-		if(diPhotonPointers.size() >0){
-		 lpv = diPhotonPointers[0]->getVertex(); // The idea is to eventually loop over ALL diphoton canidates in future commit. FIXME
+		if(useFlashggVertex){
+			if(diPhotonPointers.size() >0){
+			 lpv = diPhotonPointers[0]->getVertex(); // The idea is to eventually loop over ALL diphoton canidates in future commit. FIXME
+			} else {
+			lpv = pvPtrs[0]; 
+			} 
 		} else {
 		lpv = pvPtrs[0]; 
-
 		}
-
+		
+		
+		
 
 		//int legacyPVindex = 0; //use this dummy for now. Will eventually get filled with info from legacy vertex selector. 
 
