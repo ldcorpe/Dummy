@@ -21,7 +21,8 @@
 #include "flashgg/MicroAODFormats/interface/VertexCandidateMap.h"
 #include "flashgg/MicroAODFormats/interface/DiPhotonCandidate.h"
 #include "FWCore/Utilities/interface/EDGetToken.h"
-
+#include "DataFormats/VertexReco/interface/Vertex.h"
+using namespace edm;
 // ------------------------------------------------------------------------------------------
 class PuppiProducer : public edm::EDProducer {
 
@@ -50,6 +51,8 @@ class PuppiProducer : public edm::EDProducer {
 		std::string     fPVName;
 		edm::EDGetTokenT< flashgg::VertexCandidateMap > vertexCandidateMapToken_;
 		edm::EDGetTokenT<edm::View<flashgg::DiPhotonCandidate> > diPhotonToken_;
+		edm::EDGetTokenT<View<reco::Vertex> > vertexToken_;
+		edm::EDGetTokenT<View<pat::PackedCandidate> > pfcandidateToken_;
 		bool            fUseDZ;
 		float           fDZCut;
 		PuppiContainer *fPuppiContainer;
