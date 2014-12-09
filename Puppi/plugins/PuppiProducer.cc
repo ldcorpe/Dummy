@@ -143,7 +143,7 @@ void PuppiProducer::produce(edm::Event& iEvent, const edm::EventSetup& iSetup) {
 			}
 		}
 		pDZ = lPack->dz(lpv->position()); //Unlike the original code, these quantities need to be calculated from the new PV, not 0th vtx.
-		//pDZ = lPack->dz(); //Unlike the original code, these quantities need to be calculated from the new PV, not 0th vtx.
+		//pDZ = lPack->dz(); //Unlike the  original code, these quantities need to be calculated from the new PV, not 0th vtx.
 		pD0 = lPack->dxy(lpv->position());
 		pReco.dZ = pDZ;
 		pReco.d0 = pD0;
