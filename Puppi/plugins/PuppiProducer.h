@@ -18,8 +18,8 @@
 #include "FWCore/ParameterSet/interface/ParameterSet.h"
 #include "DataFormats/Math/interface/PtEtaPhiMass.h"
 #include "Dummy/Puppi/interface/PuppiContainer.h"
-#include "flashgg/MicroAODFormats/interface/VertexCandidateMap.h"
-#include "flashgg/MicroAODFormats/interface/DiPhotonCandidate.h"
+#include "flashgg/DataFormats/interface/VertexCandidateMap.h"
+#include "flashgg/DataFormats/interface/DiPhotonCandidate.h"
 #include "FWCore/Utilities/interface/EDGetToken.h"
 #include "DataFormats/VertexReco/interface/Vertex.h"
 using namespace edm;
