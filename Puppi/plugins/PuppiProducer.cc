@@ -86,7 +86,7 @@ void PuppiProducer::produce(edm::Event& iEvent, const edm::EventSetup& iSetup) {
 
 	if(useFlashggVertex){
 		if(diPhotonPointers.size() >0){
-			lpv = diPhotonPointers[0]->getVertex(); // The idea is to eventually loop over ALL diphoton canidates in future commit. FIXME
+			lpv = diPhotonPointers[0]->vtx(); // The idea is to eventually loop over ALL diphoton canidates in future commit. FIXME
 		} else {
 			lpv = pvPtrs[0]; 
 		} 
