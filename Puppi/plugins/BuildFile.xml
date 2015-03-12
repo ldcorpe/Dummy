@@ -3,7 +3,7 @@
 <use name="FWCore/ParameterSet"/>
 <use name="DataFormats/PatCandidates"/>
 <use name="DataFormats/EgammaCandidates"/>
-<use name="flashgg/MicroAODFormats"/>
+<use name="flashgg/DataFormats"/>
 
 <library   name="DummyPuppiplugins" file="*.cc">
   <use   name="Dummy/Puppi" />
